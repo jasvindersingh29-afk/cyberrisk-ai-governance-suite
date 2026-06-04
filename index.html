@@ -1,0 +1,156 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>CyberRisk AI Governance Suite</title>
+<style>
+body{font-family:Arial;margin:0;background:#0f172a;color:white}
+header{padding:20px;background:#14532d}
+.container{padding:20px}
+.card{background:#111827;padding:20px;border-radius:12px;margin-bottom:20px}
+select,input{padding:10px;margin:5px;width:100%}
+button{padding:12px;background:#22c55e;border:0;border-radius:8px;font-weight:bold}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.metric{background:#020617;padding:15px;border-radius:10px}
+table{width:100%;border-collapse:collapse}
+th,td{border-bottom:1px solid #334155;padding:10px;text-align:left}
+.high{color:#ef4444;font-weight:bold}
+.medium{color:#f59e0b;font-weight:bold}
+.low{color:#22c55e;font-weight:bold}
+</style>
+</head>
+<body>
+<header>
+<h1>CyberRisk AI Governance Suite</h1>
+<p>EUC • Models • Non-Models • RPA • BMT • GenAI Risk Assessment</p>
+</header>
+
+<div class="container">
+
+<div class="card">
+<h2>Executive Dashboard</h2>
+<div class="grid">
+<div class="metric"><h3>7,000</h3><p>EUC Assets</p></div>
+<div class="metric"><h3>180</h3><p>Models</p></div>
+<div class="metric"><h3>95</h3><p>Automations</p></div>
+<div class="metric"><h3>43</h3><p>BMTs</p></div>
+</div>
+</div>
+
+<div class="card">
+<h2>AI Risk Assessment Generator</h2>
+
+<label>Asset Name</label>
+<input id="asset" value="Treasury Forecasting EUC">
+
+<label>Asset Type</label>
+<select id="type">
+<option>EUC</option>
+<option>Non-Model EUC</option>
+<option>Model EUC</option>
+<option>RPA / Automation</option>
+<option>BMT</option>
+<option>GenAI Solution</option>
+</select>
+
+<label>Contains PII?</label>
+<select id="pii">
+<option>No</option>
+<option>Yes</option>
+</select>
+
+<label>Regulatory Impact?</label>
+<select id="reg">
+<option>No</option>
+<option>Yes</option>
+</select>
+
+<label>Business Critical?</label>
+<select id="critical">
+<option>No</option>
+<option>Yes</option>
+</select>
+
+<button onclick="assess()">Generate AI Assessment</button>
+</div>
+
+<div class="card">
+<h2>Assessment Output</h2>
+<div id="output">Generate an assessment...</div>
+</div>
+
+<div class="card">
+<h2>Generated Risk Register</h2>
+<table>
+<tr>
+<th>Asset Type</th>
+<th>Assessment Focus</th>
+<th>Controls</th>
+</tr>
+<tr>
+<td>EUC</td>
+<td>Operational Risk</td>
+<td>Version Control, Access Reviews, Testing</td>
+</tr>
+<tr>
+<td>Model EUC</td>
+<td>Model + Technology Risk</td>
+<td>Validation, Explainability, Monitoring</td>
+</tr>
+<tr>
+<td>Non-Model EUC</td>
+<td>Formula & Data Quality Risk</td>
+<td>Change Management, QA</td>
+</tr>
+<tr>
+<td>RPA</td>
+<td>Automation Risk</td>
+<td>Credential Mgmt, Logging</td>
+</tr>
+<tr>
+<td>BMT</td>
+<td>Third Party Risk</td>
+<td>Vendor Due Diligence</td>
+</tr>
+<tr>
+<td>GenAI</td>
+<td>AI Governance Risk</td>
+<td>Human Oversight, Prompt Logging</td>
+</tr>
+</table>
+</div>
+
+</div>
+
+<script>
+function assess(){
+ let score=0;
+ let type=document.getElementById('type').value;
+ if(document.getElementById('pii').value==='Yes') score+=2;
+ if(document.getElementById('reg').value==='Yes') score+=3;
+ if(document.getElementById('critical').value==='Yes') score+=2;
+
+ let risk='Low';
+ if(score>=3) risk='Medium';
+ if(score>=5) risk='High';
+
+ let controls='';
+ if(type==='EUC') controls='Access Reviews, Version Control, Testing';
+ if(type==='Non-Model EUC') controls='Data Validation, Change Management';
+ if(type==='Model EUC') controls='Model Validation, Bias Testing, Explainability';
+ if(type==='RPA / Automation') controls='Credential Vaulting, Logging, Monitoring';
+ if(type==='BMT') controls='Vendor Due Diligence, Contractual Controls';
+ if(type==='GenAI Solution') controls='Human Approval, AI Governance, Data Controls';
+
+ document.getElementById('output').innerHTML=
+ '<h3>'+document.getElementById('asset').value+'</h3>'+
+ '<p><b>Risk Rating:</b> <span class="'+risk.toLowerCase()+'">'+risk+'</span></p>'+
+ '<p><b>Asset Type:</b> '+type+'</p>'+
+ '<p><b>Required Controls:</b> '+controls+'</p>'+
+ '<p><b>AI Generated Executive Summary:</b> This asset requires governance controls commensurate with its business criticality, regulatory impact, and data sensitivity. Recommended remediation should be tracked through a centralized GRC workflow.</p>';
+}
+</script>
+
+</body>
+</html>
