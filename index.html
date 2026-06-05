@@ -1,156 +1,26 @@
-
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta charset="utf-8">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>CyberRisk AI Governance Suite</title>
 <style>
-body{font-family:Arial;margin:0;background:#0f172a;color:white}
-header{padding:20px;background:#14532d}
-.container{padding:20px}
-.card{background:#111827;padding:20px;border-radius:12px;margin-bottom:20px}
-select,input{padding:10px;margin:5px;width:100%}
-button{padding:12px;background:#22c55e;border:0;border-radius:8px;font-weight:bold}
-.grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
-.metric{background:#020617;padding:15px;border-radius:10px}
-table{width:100%;border-collapse:collapse}
-th,td{border-bottom:1px solid #334155;padding:10px;text-align:left}
-.high{color:#ef4444;font-weight:bold}
-.medium{color:#f59e0b;font-weight:bold}
-.low{color:#22c55e;font-weight:bold}
+*{box-sizing:border-box}body{margin:0;font-family:Inter,Arial,sans-serif;background:#07111f;color:#e5e7eb}a{color:inherit}.nav{display:flex;justify-content:space-between;align-items:center;padding:18px 36px;background:#07111f;border-bottom:1px solid #1e293b;position:sticky;top:0;z-index:10}.brand{font-weight:900;font-size:20px}.brand span{color:#22c55e}.navlinks{display:flex;gap:22px;color:#cbd5e1;font-size:14px}.hero{padding:70px 36px 40px;background:radial-gradient(circle at top right,#14532d 0,#07111f 46%)}.wrap{max-width:1180px;margin:0 auto}.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:34px;align-items:center}.eyebrow{text-transform:uppercase;letter-spacing:2px;color:#86efac;font-size:12px;font-weight:800}h1{font-size:56px;line-height:1.02;margin:12px 0}.subtitle{font-size:20px;line-height:1.5;color:#cbd5e1}.cta{display:flex;gap:14px;margin-top:26px;flex-wrap:wrap}button,.btn{border:0;padding:13px 18px;border-radius:12px;background:#22c55e;color:#052e16;font-weight:900;text-decoration:none;cursor:pointer}.btn.secondary{background:#1e293b;color:#e5e7eb;border:1px solid #334155}.panel{background:#0f172a;border:1px solid #334155;border-radius:22px;padding:22px;box-shadow:0 24px 60px rgba(0,0,0,.28)}.metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:28px 0}.metric{background:#020617;border:1px solid #1e293b;border-radius:16px;padding:18px}.metric strong{display:block;font-size:30px}.metric small{color:#94a3b8}section{padding:42px 36px}h2{font-size:34px;margin:0 0 10px}.muted{color:#94a3b8;line-height:1.55}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:20px}.card{background:#0f172a;border:1px solid #334155;border-radius:20px;padding:20px}.card h3{margin-top:0;color:#f8fafc}.grid2{display:grid;grid-template-columns:.88fr 1.12fr;gap:24px}label{display:block;margin-top:13px;color:#cbd5e1;font-weight:700}input,select{width:100%;padding:12px;margin-top:7px;border-radius:12px;border:1px solid #334155;background:#020617;color:#fff}.checks label{display:flex;gap:10px;align-items:center;font-weight:500}.checks input{width:auto}.risk{display:inline-block;padding:7px 12px;border-radius:999px;font-weight:900}.High{background:#fecaca;color:#7f1d1d}.Medium{background:#fde68a;color:#78350f}.Low{background:#bbf7d0;color:#14532d}.outputBox{background:#020617;border:1px solid #334155;border-radius:18px;padding:18px;margin-top:12px}.dash{display:grid;grid-template-columns:1fr 1fr;gap:18px}.barrow{display:grid;grid-template-columns:115px 1fr 35px;gap:10px;align-items:center;margin:12px 0}.track{height:13px;background:#1e293b;border-radius:99px;overflow:hidden}.fill{height:100%;background:#22c55e;border-radius:99px}.red{background:#ef4444}.amber{background:#f59e0b}table{width:100%;border-collapse:collapse;margin-top:8px}th,td{text-align:left;border-bottom:1px solid #1e293b;padding:11px}th{color:#cbd5e1;font-size:12px;text-transform:uppercase}.architecture{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-top:22px}.arch{background:#020617;border:1px solid #334155;border-radius:16px;padding:16px;text-align:center}footer{padding:28px 36px;border-top:1px solid #1e293b;color:#94a3b8;text-align:center}@media(max-width:900px){.hero-grid,.grid2,.dash,.cards,.metrics,.architecture{grid-template-columns:1fr}h1{font-size:40px}.navlinks{display:none}}
 </style>
 </head>
 <body>
-<header>
-<h1>CyberRisk AI Governance Suite</h1>
-<p>EUC • Models • Non-Models • RPA • BMT • GenAI Risk Assessment</p>
-</header>
-
-<div class="container">
-
-<div class="card">
-<h2>Executive Dashboard</h2>
-<div class="grid">
-<div class="metric"><h3>7,000</h3><p>EUC Assets</p></div>
-<div class="metric"><h3>180</h3><p>Models</p></div>
-<div class="metric"><h3>95</h3><p>Automations</p></div>
-<div class="metric"><h3>43</h3><p>BMTs</p></div>
-</div>
-</div>
-
-<div class="card">
-<h2>AI Risk Assessment Generator</h2>
-
-<label>Asset Name</label>
-<input id="asset" value="Treasury Forecasting EUC">
-
-<label>Asset Type</label>
-<select id="type">
-<option>EUC</option>
-<option>Non-Model EUC</option>
-<option>Model EUC</option>
-<option>RPA / Automation</option>
-<option>BMT</option>
-<option>GenAI Solution</option>
-</select>
-
-<label>Contains PII?</label>
-<select id="pii">
-<option>No</option>
-<option>Yes</option>
-</select>
-
-<label>Regulatory Impact?</label>
-<select id="reg">
-<option>No</option>
-<option>Yes</option>
-</select>
-
-<label>Business Critical?</label>
-<select id="critical">
-<option>No</option>
-<option>Yes</option>
-</select>
-
-<button onclick="assess()">Generate AI Assessment</button>
-</div>
-
-<div class="card">
-<h2>Assessment Output</h2>
-<div id="output">Generate an assessment...</div>
-</div>
-
-<div class="card">
-<h2>Generated Risk Register</h2>
-<table>
-<tr>
-<th>Asset Type</th>
-<th>Assessment Focus</th>
-<th>Controls</th>
-</tr>
-<tr>
-<td>EUC</td>
-<td>Operational Risk</td>
-<td>Version Control, Access Reviews, Testing</td>
-</tr>
-<tr>
-<td>Model EUC</td>
-<td>Model + Technology Risk</td>
-<td>Validation, Explainability, Monitoring</td>
-</tr>
-<tr>
-<td>Non-Model EUC</td>
-<td>Formula & Data Quality Risk</td>
-<td>Change Management, QA</td>
-</tr>
-<tr>
-<td>RPA</td>
-<td>Automation Risk</td>
-<td>Credential Mgmt, Logging</td>
-</tr>
-<tr>
-<td>BMT</td>
-<td>Third Party Risk</td>
-<td>Vendor Due Diligence</td>
-</tr>
-<tr>
-<td>GenAI</td>
-<td>AI Governance Risk</td>
-<td>Human Oversight, Prompt Logging</td>
-</tr>
-</table>
-</div>
-
-</div>
-
+<nav class="nav"><div class="brand">CyberRisk <span>AI</span></div><div class="navlinks"><a href="#features">Features</a><a href="#demo">Assessment</a><a href="#dashboard">Dashboard</a><a href="#architecture">Architecture</a></div></nav>
+<div class="hero"><div class="wrap hero-grid"><div><div class="eyebrow">AI Governance • Cyber Risk • Operational Resilience</div><h1>AI-powered governance for EUCs, Models, Automations and GenAI assets.</h1><p class="subtitle">A CISO-ready prototype that automates inherent risk assessments, control recommendations, framework mapping and executive reporting for highly regulated organizations.</p><div class="cta"><a class="btn" href="#demo">Launch Assessment</a><a class="btn secondary" href="#architecture">View Architecture</a></div></div><div class="panel"><h3>Portfolio Snapshot</h3><div class="metrics"><div class="metric"><strong>7,000</strong><small>EUCs</small></div><div class="metric"><strong>180</strong><small>Models</small></div><div class="metric"><strong>95</strong><small>Automations</small></div><div class="metric"><strong>43</strong><small>BMTs</small></div></div><div class="outputBox"><strong>Executive Value</strong><p class="muted">Reduce manual assessment effort, improve risk-rating consistency, accelerate audit readiness and provide leadership with real-time risk visibility.</p></div></div></div></div>
+<section id="features"><div class="wrap"><h2>Product Modules</h2><p class="muted">Designed for enterprise security, risk, compliance and technology governance teams.</p><div class="cards"><div class="card"><h3>EUC Governance</h3><p class="muted">Assess spreadsheets, databases and business-developed tools for data, access, change and operational risk.</p></div><div class="card"><h3>Model & Non-Model Risk</h3><p class="muted">Differentiate deterministic calculators from predictive models and apply the right governance controls.</p></div><div class="card"><h3>RPA / Automation</h3><p class="muted">Evaluate credential use, logging, exception handling, operational dependencies and resilience risk.</p></div><div class="card"><h3>BMT Review</h3><p class="muted">Identify business-managed technology requiring technology, vendor and data governance oversight.</p></div><div class="card"><h3>GenAI Governance</h3><p class="muted">Assess public/private LLM usage, human oversight, data exposure, prompt logging and output validation.</p></div><div class="card"><h3>Executive Reporting</h3><p class="muted">Generate board-ready summaries, control-gap themes, remediation priorities and portfolio risk trends.</p></div></div></div></section>
+<section id="demo"><div class="wrap grid2"><div class="panel"><h2>AI Risk Assessment Generator</h2><label>Asset Name</label><input id="asset" value="Treasury Forecasting EUC"><label>Asset Type</label><select id="type"><option>EUC</option><option>Non-Model EUC</option><option>Model EUC</option><option>RPA / Automation</option><option>BMT</option><option>GenAI Solution</option></select><label>Data Classification</label><select id="classification"><option>Internal</option><option selected>Confidential</option><option>Restricted</option></select><div class="checks"><label><input type="checkbox" id="pii" checked> PII / PCI</label><label><input type="checkbox" id="reg" checked> Regulatory or SOX impact</label><label><input type="checkbox" id="critical" checked> Business critical</label><label><input type="checkbox" id="external"> External data source or third party</label><label><input type="checkbox" id="privileged"> Privileged access</label><label><input type="checkbox" id="genai"> Uses GenAI / LLM output</label></div><button onclick="assess()">Generate Assessment</button></div><div class="panel"><h2>Assessment Output</h2><div id="output" class="outputBox">Complete the form and generate an assessment.</div></div></div></section>
+<section id="dashboard"><div class="wrap panel"><h2>Executive Dashboard</h2><p class="muted">Interactive dashboard updates when assessments are generated.</p><div class="metrics"><div class="metric"><strong id="total">6</strong><small>Total Assessed</small></div><div class="metric"><strong id="high">2</strong><small>High Risk</small></div><div class="metric"><strong id="gaps">5</strong><small>Open Gaps</small></div><div class="metric"><strong id="coverage">72%</strong><small>Avg. Coverage</small></div></div><div class="dash"><div class="card"><h3>Risk Distribution</h3><div id="bars"></div></div><div class="card"><h3>Top Control Themes</h3><div id="themes"></div></div></div><div class="card" style="margin-top:18px"><h3>Risk Register</h3><table><thead><tr><th>Asset</th><th>Type</th><th>Risk</th><th>Primary Control Gap</th><th>Status</th></tr></thead><tbody id="table"></tbody></table></div></div></section>
+<section id="architecture"><div class="wrap"><h2>Reference Architecture</h2><p class="muted">How the prototype would evolve into an enterprise platform.</p><div class="architecture"><div class="arch"><strong>Inputs</strong><br><span class="muted">EUC inventory, models, vendors, evidence</span></div><div class="arch"><strong>AI Risk Engine</strong><br><span class="muted">Assessment logic and scoring</span></div><div class="arch"><strong>RAG Library</strong><br><span class="muted">NIST, ISO, SOC2, internal standards</span></div><div class="arch"><strong>Workflow</strong><br><span class="muted">Approvals, remediation, exceptions</span></div><div class="arch"><strong>Reporting</strong><br><span class="muted">Dashboard, audit packs, board views</span></div></div></div></section>
+<footer>Built by Jazz Singh • Cybersecurity • Technology Risk • AI Governance • Fraud & Financial Crimes</footer>
 <script>
-function assess(){
- let score=0;
- let type=document.getElementById('type').value;
- if(document.getElementById('pii').value==='Yes') score+=2;
- if(document.getElementById('reg').value==='Yes') score+=3;
- if(document.getElementById('critical').value==='Yes') score+=2;
-
- let risk='Low';
- if(score>=3) risk='Medium';
- if(score>=5) risk='High';
-
- let controls='';
- if(type==='EUC') controls='Access Reviews, Version Control, Testing';
- if(type==='Non-Model EUC') controls='Data Validation, Change Management';
- if(type==='Model EUC') controls='Model Validation, Bias Testing, Explainability';
- if(type==='RPA / Automation') controls='Credential Vaulting, Logging, Monitoring';
- if(type==='BMT') controls='Vendor Due Diligence, Contractual Controls';
- if(type==='GenAI Solution') controls='Human Approval, AI Governance, Data Controls';
-
- document.getElementById('output').innerHTML=
- '<h3>'+document.getElementById('asset').value+'</h3>'+
- '<p><b>Risk Rating:</b> <span class="'+risk.toLowerCase()+'">'+risk+'</span></p>'+
- '<p><b>Asset Type:</b> '+type+'</p>'+
- '<p><b>Required Controls:</b> '+controls+'</p>'+
- '<p><b>AI Generated Executive Summary:</b> This asset requires governance controls commensurate with its business criticality, regulatory impact, and data sensitivity. Recommended remediation should be tracked through a centralized GRC workflow.</p>';
-}
-</script>
-
-</body>
-</html>
+let register=[{asset:"Treasury Forecasting EUC",type:"EUC",risk:"High",gap:"Version control and access review",status:"Remediation Required",coverage:58},{asset:"Customer Churn ML Model",type:"Model EUC",risk:"High",gap:"Model validation and explainability",status:"In Progress",coverage:62},{asset:"Capital Calculator",type:"Non-Model EUC",risk:"Medium",gap:"Formula testing and data quality",status:"In Review",coverage:75},{asset:"Invoice Processing Bot",type:"RPA / Automation",risk:"Medium",gap:"Credential vaulting",status:"Action Plan",coverage:79},{asset:"Vendor Reporting Portal",type:"BMT",risk:"Medium",gap:"Vendor due diligence evidence",status:"In Review",coverage:74},{asset:"Policy Drafting Assistant",type:"GenAI Solution",risk:"Low",gap:"Output validation",status:"On Track",coverage:86}];
+function assess(){let asset=document.getElementById("asset").value||"Unnamed Asset";let type=document.getElementById("type").value;let classification=document.getElementById("classification").value;let score=0;if(classification==="Confidential")score+=2;if(classification==="Restricted")score+=3;["pii","reg","critical","external","privileged","genai"].forEach(id=>{if(document.getElementById(id).checked)score+=1});let risk=score>=7?"High":score>=4?"Medium":"Low";let gap=controlGap(type);let controls=controlsFor(type);let framework=type==="GenAI Solution"?"NIST AI RMF, ISO 42001, NIST CSF, SOC 2":"NIST CSF, ISO 27001, SOC 2, internal technology risk standards";let status=risk==="High"?"Remediation Required":risk==="Medium"?"In Review":"On Track";let coverage=risk==="High"?59:risk==="Medium"?76:90;document.getElementById("output").innerHTML=`<h3>${asset}</h3><p><span class="risk ${risk}">${risk} Risk</span></p><p><strong>Asset Type:</strong> ${type}</p><p><strong>Risk Drivers:</strong> ${classification} data, business criticality, regulatory relevance, technology dependency and governance complexity.</p><p><strong>Primary Gap:</strong> ${gap}</p><p><strong>Recommended Controls:</strong></p><ul>${controls.map(x=>`<li>${x}</li>`).join("")}</ul><p><strong>Framework Mapping:</strong> ${framework}</p><div class="outputBox"><strong>Executive Summary</strong><p class="muted">CyberRisk AI recommends governance review, evidence collection, remediation ownership and human approval before accepting residual risk. This assessment should be routed through the enterprise GRC workflow for tracking and oversight.</p></div>`;register.unshift({asset,type,risk,gap,status,coverage});render();}
+function controlGap(type){return {"EUC":"Version control and access review","Non-Model EUC":"Formula testing and data quality","Model EUC":"Model validation and explainability","RPA / Automation":"Credential vaulting and logging","BMT":"Vendor due diligence and technology ownership","GenAI Solution":"Human oversight and output validation"}[type]}
+function controlsFor(type){return {"EUC":["Access review","Version control","Change approval","Data quality validation","Backup and recovery"],"Non-Model EUC":["Formula inventory","Independent review","Input/output reconciliation","Change management"],"Model EUC":["Independent model validation","Explainability review","Bias testing","Ongoing performance monitoring"],"RPA / Automation":["Credential vaulting","Exception handling","Bot activity logging","Business continuity plan"],"BMT":["Vendor due diligence","Contractual controls","Data classification","Technology ownership"],"GenAI Solution":["Human-in-the-loop approval","Prompt and output logging","Data-loss controls","AI governance review"]}[type]}
+function render(){let total=register.length,high=register.filter(x=>x.risk==="High").length,med=register.filter(x=>x.risk==="Medium").length,low=register.filter(x=>x.risk==="Low").length;document.getElementById("total").textContent=total;document.getElementById("high").textContent=high;document.getElementById("gaps").textContent=register.filter(x=>x.status!=="On Track").length;document.getElementById("coverage").textContent=Math.round(register.reduce((s,x)=>s+x.coverage,0)/total)+"%";let max=Math.max(high,med,low,1);document.getElementById("bars").innerHTML=bar("High",high,max,"red")+bar("Medium",med,max,"amber")+bar("Low",low,max,"");let themes={};register.forEach(x=>themes[x.gap]=(themes[x.gap]||0)+1);let arr=Object.entries(themes).sort((a,b)=>b[1]-a[1]).slice(0,5);let maxT=Math.max(...arr.map(x=>x[1]),1);document.getElementById("themes").innerHTML=arr.map(x=>bar(x[0],x[1],maxT,"amber")).join("");document.getElementById("table").innerHTML=register.map(x=>`<tr><td>${x.asset}</td><td>${x.type}</td><td><span class="risk ${x.risk}">${x.risk}</span></td><td>${x.gap}</td><td>${x.status}</td></tr>`).join("")}
+function bar(label,val,max,cls){return `<div class="barrow"><span>${label}</span><div class="track"><div class="fill ${cls}" style="width:${Math.round(val/max*100)}%"></div></div><strong>${val}</strong></div>`}render();
+</script></body></html>
